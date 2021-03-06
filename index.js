@@ -1,8 +1,9 @@
 const msgEl = document.getElementById("msg");
-const numberTag = document.getElementById("number");
+const numberTag = document.createElement("h2");
 const randomNum = getRandomNumber();
 const textNode = document.createTextNode(`Number: ${randomNum}`);
 numberTag.appendChild(textNode);
+document.body.appendChild(numberTag);
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -22,8 +23,6 @@ function onSpeak(e) {
 
 // Write what user speaks
 function writeMessage(msg) {
-  console.log(msg);
-
   msgEl.innerHTML = `
     <div>You said: </div>
     <span class="box">${msg}</span>
@@ -32,21 +31,18 @@ function writeMessage(msg) {
 
 // Check msg against number
 function checkNumber(msg) {
-  console.log("msg", msg);
-
   const num = +msg;
-
-  console.log("num", num);
-
   // Check if valid number
   if (Number.isNaN(num)) {
     msgEl.innerHTML += "<div>That is not a valid number</div>";
+    msgEl.innerHTML += "<div>Try Again</div>";
     return;
   }
 
   // Check in range
   if (num > 100 || num < 1) {
     msgEl.innerHTML += "<div>Number must be between 1 and 100</div>";
+    msgEl.innerHTML += "<div>Try Again</div>";
     return;
   }
 
