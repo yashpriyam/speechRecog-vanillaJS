@@ -3,7 +3,6 @@ const numberTag = document.getElementById("number");
 const randomNum = getRandomNumber();
 const textNode = document.createTextNode(`Number: ${randomNum}`);
 numberTag.appendChild(textNode);
-// console.log("Number:", randomNum);
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
