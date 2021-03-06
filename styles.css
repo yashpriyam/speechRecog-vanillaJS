@@ -3,7 +3,8 @@
 }
 
 body {
-  background: #2f3542 url("img/bg.jpg") no-repeat left center/cover;
+  /* background: #2f3542 url("img/bg.jpg") no-repeat left center/cover; */
+  background-color: #d14747;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -18,6 +19,12 @@ body {
 h1,
 h3 {
   margin-bottom: 0;
+}
+
+h2 {
+  background-color: #030303;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 p {
